@@ -27,6 +27,11 @@ public class Customer {
 
 
     }
+
+    public int getCustomer_id(){
+
+        return this.customer_id;
+    }
     // TODO - toString method
 
 }

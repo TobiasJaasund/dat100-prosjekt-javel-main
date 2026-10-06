@@ -9,7 +9,7 @@ public class Customers {
     // a) Complete constructor
     public Customers(int size) {
 
-        // TODO
+        this.customers = new Customer[size];
 
     }
 
@@ -19,6 +19,12 @@ public class Customers {
 
         int count = 0;
 
+        for(int i = 0; i<customers.length; i++){
+
+            if (customers[i] != null){
+                count++;
+            }
+        }
         // TODO
 
         return count;
@@ -30,7 +36,16 @@ public class Customers {
         boolean funnet = false;
         Customer c = null;
 
-        // TODO
+        int i = 0;
+        while (i< this.customers.length && !funnet){
+
+            c = this.customers[i];
+
+            if(c.getCustomer_id() == customer_id){
+                funnet = true;
+            }
+        }
+
 
         return c;
     }
