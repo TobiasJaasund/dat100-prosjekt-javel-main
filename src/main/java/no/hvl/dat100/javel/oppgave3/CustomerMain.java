@@ -17,5 +17,9 @@ public class CustomerMain {
          Write code that creates a Customer object and teste the methods implemented in the class
 
         */
+
+        Customer k1 = new Customer("Tobias", "tobias@gmail.com", 1,PowerAgreementType.NORGESPRICE);
+        
+        System.out.println(k1.getName());
     }
 }
