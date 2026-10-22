@@ -14,23 +14,28 @@ public class Customer {
         this.customer_id = customer_id;
         this.agreement = agreement;
 
-
-        // TODO
     }
 
     public String getName () {
 
         return this.name;
     }
+    public int getCustomer_id () {
+
+        return this.customer_id;
+    }
+    public String getemail () {
+
+        return this.email;
+    }
+    public PowerAgreementType getagreement () {
+
+        return this.agreement;
+    }
 
     public void setName(String name){
 
 
-    }
-
-    public int getCustomer_id(){
-
-        return this.customer_id;
     }
     // TODO - toString method
 

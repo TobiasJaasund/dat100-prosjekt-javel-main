@@ -40,7 +40,7 @@ public class Customers {
         while (i< this.customers.length && !funnet){
 
             c = this.customers[i];
-
+            
             if(c.getCustomer_id() == customer_id){
                 funnet = true;
             }
