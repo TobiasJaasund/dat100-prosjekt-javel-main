@@ -1,5 +1,6 @@
 package no.hvl.dat100.javel.oppgave5;
 
+import no.hvl.dat100.javel.oppgave1.DailyPower;
 import no.hvl.dat100.javel.oppgave3.Customer;
 import no.hvl.dat100.javel.oppgave2.MonthlyPower;
 
@@ -17,19 +18,51 @@ public class Invoice {
 
     public Invoice(Customer c, String month, double[][] usage, double[][] power_prices) {
 
-        // TODO - konstruktør
+        this.month = month;
+        this.usage = usage;
+        this.prices = power_prices;
+        this.c = c;
 
     }
 
     public void computeAmount() {
 
-        // TODO
+    switch(c.getAgreement()){
+
+        case SPOTPRICE:
+            amount = MonthlyPower.computeSpotPrice(usage, prices);
+            break;
+
+        case POWERSUPPORT:
+            amount = MonthlyPower.computeSpotPrice(usage, prices) - MonthlyPower.computePowerSupport(usage, prices) ;
+            break;
+
+        case NORGESPRICE:
+            amount = MonthlyPower.computeNorgesPrice(usage);
+            break;
+        }
 
     }
 
+
     public void printInvoice() {
 
-        // TODO
+        System.out.println("==============");
+
+        System.out.println("Customer number " + c.getCustomer_id());
+        System.out.println("Name " + c.getName());
+        System.out.println("Email " + c.getEmail());
+        System.out.println("Agreement " + c.getAgreement());
+
+        System.out.println();
+
+        System.out.println("Month: " + month);
+        System.out.printf("Usage: %.2f kWh%n",MonthlyPower.computePowerUsage(usage));
+        System.out.printf("Amount: %.2f NOK%n", amount);
+
+        System.out.println("==============");
+
+
 
     }
 }

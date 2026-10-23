@@ -2,7 +2,6 @@ package no.hvl.dat100.javel.oppgave3;
 
 public class Customer {
 
-    // TODO - object variables (attributes)
 
     private String name;
     private String email;
@@ -19,7 +18,6 @@ public class Customer {
 
     }
 
-    // TODO - getter/setter methods for all objectvariables
 
     public String getName () {
 
@@ -61,7 +59,7 @@ public class Customer {
         this.agreement = agreement;
     }
 
-    // TODO - toString method
+
 
     public String toString () {
 
