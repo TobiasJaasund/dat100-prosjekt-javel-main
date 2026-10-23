@@ -17,35 +17,39 @@ public class DayMain {
         System.out.println();
 
 
-        DailyPower.printPowerPrices(powerprices_day);
+        System.out.println("a)\n");
 
-        System.out.println();
+        DailyPower.printPowerPrices(DayPowerData.powerprices_day);
 
-        DailyPower.printPowerUsage(powerusage_day);
+        System.out.println("\n\nb)\n");
 
-        System.out.println();
+        DailyPower.printPowerUsage(DayPowerData.powerusage_day);
 
-        System.out.println(DailyPower.computePowerUsage(powerusage_day));
+        System.out.println("\n\nc)\n");
 
-        System.out.println();
+        System.out.println(DailyPower.computePowerUsage(DayPowerData.powerusage_day));
 
-        System.out.println(DailyPower.computeSpotPrice(powerusage_day, powerprices_day));
+        System.out.println("\nd)\n");
 
-        System.out.println();
+        System.out.println(DailyPower.computeSpotPrice(DayPowerData.powerusage_day, DayPowerData.powerprices_day));
 
-        System.out.println(DailyPower.computePowerSupport(powerusage_day, powerprices_day) );
+        //På oppgave e) er metoden private og kan derfor bare brukes i egen klasse
 
-        System.out.println();
+        System.out.println("\nf)\n");
 
-        System.out.println(DailyPower.computeNorgesPrice(powerusage_day));
+        System.out.printf("Total strømstøtte: %.2f", DailyPower.computePowerSupport(DayPowerData.powerusage_day, DayPowerData.powerprices_day));
 
-        System.out.println();
+        System.out.println("\n\ng)\n");
 
-        System.out.println(DailyPower.findPeakUsage(powerusage_day));
+        System.out.println(DailyPower.computeNorgesPrice(DayPowerData.powerusage_day));
 
-        System.out.println();
+        System.out.println("\nh)\n");
 
-        System.out.println(DailyPower.findAvgPower(powerusage_day));
+        System.out.println(DailyPower.findPeakUsage(DayPowerData.powerusage_day));
+
+        System.out.println("\ni)\n");
+
+        System.out.println(DailyPower.findAvgPower(DayPowerData.powerusage_day));
 
     }
 }

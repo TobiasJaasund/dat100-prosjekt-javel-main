@@ -19,27 +19,33 @@ public class MonthMain {
         System.out.println();
 
 
-       // MonthlyPower.print_PowerUsage(power_usage_month);
+        System.out.println("a)\n");
 
-        System.out.println();
+        MonthlyPower.print_PowerUsage(power_usage_month);
 
-       // MonthlyPower.print_PowerPrices(power_prices_month);
+        System.out.println("\nb)\n");
 
-        System.out.println();
+        MonthlyPower.print_PowerPrices(power_prices_month);
 
-       //  System.out.println(MonthlyPower.computePowerUsage(power_usage_month) + " kWh");
+        System.out.println("\nc)\n");
 
-        System.out.println();
+        System.out.printf("Total månedlig forbruk: %.2f", MonthlyPower.computePowerUsage(power_usage_month));
 
-        // MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month);
+        System.out.println("\n\nd)\n");
 
-        System.out.println();
+        System.out.println(MonthlyPower.exceedThreshold(power_usage_month, 5000));
 
-        MonthlyPower.computePowerSupport(power_usage_month, power_prices_month);
+        System.out.println("\ne)\n");
 
-        System.out.println();
+        System.out.println(MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month));
 
-        System.out.printf("%.2f kr%n", MonthlyPower.computeNorgesPrice(power_usage_month));
+        System.out.println("\nf)\n");
+
+        System.out.println(MonthlyPower.computePowerSupport(power_usage_month, power_prices_month));
+
+        System.out.println("\ng)\n");
+
+        System.out.println(MonthlyPower.computeNorgesPrice(power_usage_month));
 
     }
 }
